@@ -23,7 +23,7 @@ namespace Senai.filmes.webapi.Controllers
 		}
 
 		[HttpGet]
-		public IEnumerable<GeneroDomain> Get()
+		public IEnumerable<GenerosDomain> Get()
 		{
 			return dominio.ListarGeneros();
 		}

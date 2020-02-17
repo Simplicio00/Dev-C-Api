@@ -11,16 +11,16 @@ namespace Senai.filmes.webapi.Repositories
 	public class GeneroRepository : IGeneroDomain
 	{
 
-		private string bd = "Data Source=DEV101\\SQLEXPRESS; initial catalog=Filmes; user Id=sa; pwd=sa@132"; 
+		private string bd = "Data Source=DEV101\\SQLEXPRESS; initial catalog=Filmes_manha; user Id=sa; pwd=sa@132"; 
 		// ou integrated security - em caso de não ter autenticação..
 
-		public List<GeneroDomain> ListarGeneros()
+		public List<GenerosDomain> ListarGeneros()
 		{
-			List<GeneroDomain> Generos = new List<GeneroDomain>();
+			List<GenerosDomain> Generos = new List<GenerosDomain>();
 			
 			using (SqlConnection connect = new SqlConnection(bd))
 			{
-				string query = "SELECT IdGenero, Nome FROM Genero";
+				string query = "SELECT IdGenero, Nome FROM Generos";
 				connect.Open();
 
 				SqlDataReader reader;
@@ -31,13 +31,13 @@ namespace Senai.filmes.webapi.Repositories
 
 					while (reader.Read())
 					{
-						GeneroDomain genero = new GeneroDomain
+						GenerosDomain generos = new GenerosDomain
 						{
 							IdGenero = Convert.ToInt32(reader[0]),
 							Nome = reader["Nome"].ToString()
 						};
 
-						Generos.Add(genero);
+						Generos.Add(generos);
 					}
 				}
 			}

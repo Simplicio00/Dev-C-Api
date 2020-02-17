@@ -13,7 +13,7 @@ namespace Senai.filmes.webapi.Domains
 
 		public int IdGenero { get; set; }
 
-		public GeneroDomain Genero { get; set; }
+		public GenerosDomain Genero { get; set; }
 				
 	}
 }

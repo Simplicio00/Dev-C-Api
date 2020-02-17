@@ -12557,23 +12557,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FIC\\.nuget\\packages\\": {},
+    "C:\\Users\\47944333873\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FIC\\Desktop\\C# api - Exercicios\\Dia 1\\Senai.filmes.webapi\\Senai.filmes.webapi\\Senai.filmes.webapi.csproj",
+      "projectUniqueName": "C:\\Users\\47944333873\\Desktop\\backend\\Dev-C-Api\\Dia 1\\Senai.filmes.webapi\\Senai.filmes.webapi\\Senai.filmes.webapi.csproj",
       "projectName": "Senai.filmes.webapi",
-      "projectPath": "C:\\Users\\FIC\\Desktop\\C# api - Exercicios\\Dia 1\\Senai.filmes.webapi\\Senai.filmes.webapi\\Senai.filmes.webapi.csproj",
-      "packagesPath": "C:\\Users\\FIC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FIC\\Desktop\\C# api - Exercicios\\Dia 1\\Senai.filmes.webapi\\Senai.filmes.webapi\\obj\\",
+      "projectPath": "C:\\Users\\47944333873\\Desktop\\backend\\Dev-C-Api\\Dia 1\\Senai.filmes.webapi\\Senai.filmes.webapi\\Senai.filmes.webapi.csproj",
+      "packagesPath": "C:\\Users\\47944333873\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\47944333873\\Desktop\\backend\\Dev-C-Api\\Dia 1\\Senai.filmes.webapi\\Senai.filmes.webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\FIC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\47944333873\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
