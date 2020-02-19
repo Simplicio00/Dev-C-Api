@@ -68,7 +68,7 @@ namespace Senai.filmes.webapi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            GenerosDomain generoBuscado = dominio.GetById(id);
+            GenerosDomain generoBuscado = dominio.BuscarPorId(id);
             if (generoBuscado == null)
             {
                 string erro = "O valor inserido é nulo";
@@ -81,7 +81,7 @@ namespace Senai.filmes.webapi.Controllers
         [HttpPut("{id}")]
         public IActionResult PutUrl(int id, GenerosDomain generosDomain)
         {
-            GenerosDomain generoBuscado = dominio.GetById(id);
+            GenerosDomain generoBuscado = dominio.BuscarPorId(id);
             if (generoBuscado == null)
             {
                 return NotFound(
@@ -102,6 +102,26 @@ namespace Senai.filmes.webapi.Controllers
                 return BadRequest(ex.Message.ToString());
             }
             
+        }
+
+
+
+        [HttpPut]
+        public IActionResult PutIdCorpo(GenerosDomain generosDomain)
+        {
+            GenerosDomain generoBuscado = dominio.BuscarPorId(generosDomain.IdGenero);
+            if (generoBuscado != null)
+            {
+                try
+                {
+                    dominio.AtualizarCorpo(generosDomain);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex);  
+                }
+            }
+            return Ok(generosDomain);
         }
 
         

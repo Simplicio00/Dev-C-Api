@@ -17,7 +17,7 @@ namespace Senai.filmes.webapi.Repositories
 
      
 
-
+                
             //visualização
 		public List<GenerosDomain> ListarGeneros()
 		{
@@ -100,13 +100,14 @@ namespace Senai.filmes.webapi.Repositories
 
 
 
-        public GenerosDomain GetById(int id)
+        public GenerosDomain BuscarPorId(int id)
         {
             using (SqlConnection connection = new SqlConnection(bd))
             {
-                string queryBuscar = "Select IdGenero, Nome from generos";
+                string queryBuscar = "Select IdGenero, Nome from generos where IdGenero=@Id";
                 using (SqlCommand command = new SqlCommand(queryBuscar,connection))
                 {
+                    command.Parameters.AddWithValue("@Id", id);
                     connection.Open();
                     SqlDataReader reader;
                     reader = command.ExecuteReader();
@@ -151,7 +152,19 @@ namespace Senai.filmes.webapi.Repositories
 
         public void AtualizarCorpo(GenerosDomain generosDomain)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(bd))
+            {
+                string queryUpdate = "update generos set Nome = @Nome where IdGenero = @Id";
+
+                using (SqlCommand command = new SqlCommand(queryUpdate,connection))
+                {
+                    command.Parameters.AddWithValue("@Id", generosDomain.IdGenero);
+                    command.Parameters.AddWithValue("@Nome", generosDomain.Nome);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
     }

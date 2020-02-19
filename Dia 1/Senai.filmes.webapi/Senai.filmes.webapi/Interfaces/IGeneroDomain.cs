@@ -15,7 +15,7 @@ namespace Senai.filmes.webapi.Interfaces
         
         GenerosDomain Delete(int id);
 
-        GenerosDomain GetById(int id);
+        GenerosDomain BuscarPorId(int id);
 
         void AtualizarCorpo(GenerosDomain generosDomain);
 
