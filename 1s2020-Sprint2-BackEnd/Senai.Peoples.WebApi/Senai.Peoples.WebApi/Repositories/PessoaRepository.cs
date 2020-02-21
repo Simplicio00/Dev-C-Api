@@ -61,6 +61,30 @@ namespace Senai.Peoples.WebApi.Repositories
             return null;
         }
 
+        public PessoaDomain BuscarPorNome(string nome)
+        {
+            SqlConnection connection = new SqlConnection(bd);
+            string query = "exec PorNome @espc";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+
+            SqlDataReader leitor;
+            command.Parameters.AddWithValue("@espc", nome);
+            leitor = command.ExecuteReader();
+            if (leitor.Read())
+            {
+                PessoaDomain pessoa = new PessoaDomain
+                {
+                    IdPessoa = Convert.ToInt32(leitor[0]),
+                    Nome = Convert.ToString(leitor[1]),
+                    Sobrenome = Convert.ToString(leitor[2])
+                };
+                return pessoa;
+            }
+            connection.Close();
+            return null;
+        }
+
         public PessoaDomain Delete(int id)
         {
             SqlConnection connection = new SqlConnection(bd);
@@ -116,7 +140,7 @@ namespace Senai.Peoples.WebApi.Repositories
                 return pessoa;
             }
         }
-
+       
       
     }
 }

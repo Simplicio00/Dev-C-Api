@@ -110,6 +110,19 @@ namespace Senai.Peoples.WebApi.Controller
             }
         }
 
+        [HttpGet("{nome}")]
+        public IActionResult BuscarPeloNome(string nome)
+        {
+            try
+            {
+                return Ok(pessoa.BuscarPorNome(nome));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
     }
 }
