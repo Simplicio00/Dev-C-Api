@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="C:\Users\47944333873\Desktop\backend\Dev-C-Api\1s2020-Sprint2-BackEnd\bk\Pessoas.cs" Link="Pessoas.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

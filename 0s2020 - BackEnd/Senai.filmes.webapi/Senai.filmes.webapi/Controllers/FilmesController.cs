@@ -13,7 +13,13 @@ namespace Senai.filmes.webapi.Controllers
     [ApiController]
     public class FilmesController : ControllerBase
     {
-        FilmeRepository banco = new FilmeRepository();
+        
+        IPessoa banco { get; set; }
+
+        public FilmesController()
+        {
+            banco = new PessoaRepository();
+        }
 
         [HttpGet]
         public IActionResult BuscarTodos()

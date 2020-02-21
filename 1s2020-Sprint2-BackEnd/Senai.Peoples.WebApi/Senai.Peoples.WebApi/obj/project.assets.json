@@ -12564,11 +12564,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47944333873\\source\\repos\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\47944333873\\Desktop\\backend\\Dev-C-Api\\1s2020-Sprint2-BackEnd\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi.csproj",
       "projectName": "Senai.Peoples.WebApi",
-      "projectPath": "C:\\Users\\47944333873\\source\\repos\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi.csproj",
+      "projectPath": "C:\\Users\\47944333873\\Desktop\\backend\\Dev-C-Api\\1s2020-Sprint2-BackEnd\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi.csproj",
       "packagesPath": "C:\\Users\\47944333873\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47944333873\\source\\repos\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\47944333873\\Desktop\\backend\\Dev-C-Api\\1s2020-Sprint2-BackEnd\\Senai.Peoples.WebApi\\Senai.Peoples.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
