@@ -42,15 +42,14 @@ namespace Senai.Peoples.WebApi.Controller
         public IActionResult Cadastrar(PessoaDomain pessoa)
         {
             try
-            {
-                this.pessoa.Post(pessoa);
-                return Ok(this.pessoa.Listar());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
+                {
+                    this.pessoa.Post(pessoa);
+                    return Ok(this.pessoa.Listar());
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
         }
 
 
@@ -110,17 +109,25 @@ namespace Senai.Peoples.WebApi.Controller
             }
         }
 
-        [HttpGet("{nome}")]
+        [HttpGet("nome/{nome}")]
         public IActionResult BuscarPeloNome(string nome)
         {
-            try
+            if (nome != null)
             {
-                return Ok(pessoa.BuscarPorNome(nome));
+                try
+                {
+                    return Ok(pessoa.BuscarPorNome(nome));
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
-            catch (Exception)
+            else
             {
-                throw;
+               return BadRequest();
             }
+            
         }
 
 

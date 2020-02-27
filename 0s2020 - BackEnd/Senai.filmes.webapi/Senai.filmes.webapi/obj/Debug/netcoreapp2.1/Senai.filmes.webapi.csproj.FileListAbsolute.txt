@@ -26,3 +26,17 @@ C:\Users\47944333873\Desktop\backend\Dev-C-Api\Dia 1\Senai.filmes.webapi\Senai.f
 C:\Users\47944333873\Desktop\backend\Dev-C-Api\Dia 1\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.RazorTargetAssemblyInfo.cache
 C:\Users\47944333873\Desktop\backend\Dev-C-Api\Dia 1\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.dll
 C:\Users\47944333873\Desktop\backend\Dev-C-Api\Dia 1\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.pdb
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\bin\Debug\netcoreapp2.1\Senai.filmes.webapi.deps.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\bin\Debug\netcoreapp2.1\Senai.filmes.webapi.runtimeconfig.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\bin\Debug\netcoreapp2.1\Senai.filmes.webapi.runtimeconfig.dev.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\bin\Debug\netcoreapp2.1\Senai.filmes.webapi.dll
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\bin\Debug\netcoreapp2.1\Senai.filmes.webapi.pdb
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.csprojAssemblyReference.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.csproj.CoreCompileInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.RazorAssemblyInfo.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.RazorAssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.AssemblyInfoInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.AssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.RazorTargetAssemblyInfo.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.dll
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\0s2020 - BackEnd\Senai.filmes.webapi\Senai.filmes.webapi\obj\Debug\netcoreapp2.1\Senai.filmes.webapi.pdb

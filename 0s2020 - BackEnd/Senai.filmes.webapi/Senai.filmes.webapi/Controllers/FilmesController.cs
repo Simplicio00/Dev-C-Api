@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.filmes.webapi.Domains;
+using Senai.filmes.webapi.Interfaces;
 using Senai.filmes.webapi.Repositories;
 
 namespace Senai.filmes.webapi.Controllers
@@ -13,13 +14,15 @@ namespace Senai.filmes.webapi.Controllers
     [ApiController]
     public class FilmesController : ControllerBase
     {
-        
-        IPessoa banco { get; set; }
+
+        IFilmesDomain banco { get; set; }
 
         public FilmesController()
         {
-            banco = new PessoaRepository();
+            banco = new FilmeRepository();
         }
+
+
 
         [HttpGet]
         public IActionResult BuscarTodos()

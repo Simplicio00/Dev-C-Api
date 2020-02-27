@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Senai.filmes.webapi
 {
@@ -20,6 +21,18 @@ namespace Senai.filmes.webapi
 				.AddMvc()
 				// Define a versão do .NET Core compatível
 				.SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.AddAuthentication(options => { options.DefaultAuthenticateScheme = "JwtBearer";
+                options.DefaultChallengeScheme = "JwtBeaer";
+                }).AddJwtBearer("JwtBearer", options => {options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("filmes-chave-autenticacao")),
+                    ClockSkew = TimeSpan.FromMinutes(30),
+                    ValidIssuer = "Senai.Filmes.WebApi",
+                    ValidAudience = "Senai.Filmes.WebApi"
+                };
+                });
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +42,9 @@ namespace Senai.filmes.webapi
 			{
 				app.UseDeveloperExceptionPage();
 			}
+
+            //Define o uso do JWTBearer
+            app.UseAuthentication();
 
 			// Define o uso do MVC
 			app.UseMvc();

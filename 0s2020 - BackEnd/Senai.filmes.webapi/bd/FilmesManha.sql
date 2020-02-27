@@ -28,3 +28,17 @@ VALUES				('A vida é bela', 2)
 
 					select Generos.Nome, Filmes.Titulo from Filmes
 					inner join Generos on Generos.IdGenero = Filmes.IdGenero
+
+
+					go
+
+create table Usuarios(
+IdUsuario int identity primary key,
+Email varchar(255) not null unique,
+Senha varchar(255) not null,
+Permissao varchar(255) not null
+);
+
+select * from Usuarios;
+
+insert into Usuarios(Email,Senha,Permissao)values('lucas@email.com','12345678','Comum'),('adm@email.com','12345678','Administrador');

@@ -64,12 +64,11 @@ namespace Senai.Peoples.WebApi.Repositories
         public PessoaDomain BuscarPorNome(string nome)
         {
             SqlConnection connection = new SqlConnection(bd);
-            string query = "exec PorNome @espc";
+            string query = $"Select IdPessoa, Nome, Sobrenome from Pessoas where Nome like '%{nome}%'";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
 
             SqlDataReader leitor;
-            command.Parameters.AddWithValue("@espc", nome);
             leitor = command.ExecuteReader();
             if (leitor.Read())
             {
