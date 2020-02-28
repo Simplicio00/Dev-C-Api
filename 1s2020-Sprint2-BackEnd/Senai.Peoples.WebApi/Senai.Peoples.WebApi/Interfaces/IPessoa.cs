@@ -19,5 +19,7 @@ namespace Senai.Peoples.WebApi.Interfaces
         PessoaDomain Delete(int id);
 
         PessoaDomain BuscarPorNome(string nome);
+
+        PessoaDomain BuscarPorEmailSenha(string email, string senha);
     }
 }

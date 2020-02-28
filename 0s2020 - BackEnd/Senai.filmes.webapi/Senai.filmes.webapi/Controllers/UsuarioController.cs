@@ -13,6 +13,7 @@ using Senai.filmes.webapi.Repositories;
 
 namespace Senai.filmes.webapi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase
@@ -42,7 +43,7 @@ namespace Senai.filmes.webapi.Controllers
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("filmes-chave-autenticacao"));
             var creds = new SigningCredentials(key, SecurityAlgorithms. HmacSha256);
             var token = new JwtSecurityToken(
-                issuer: "Senai.Filmes.WebApi", audience: "Senai.Filmes.WebApi", claims: claims, expires: DateTime.Now.AddMinutes(10), signingCredentials: creds);
+                issuer: "Senai.filmes.webApi", audience: "Senai.filmes.webApi", claims: claims, expires: DateTime.Now.AddMinutes(10), signingCredentials: creds);
             return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
         }
     }

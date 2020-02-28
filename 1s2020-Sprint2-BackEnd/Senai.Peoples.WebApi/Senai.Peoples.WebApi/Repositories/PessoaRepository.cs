@@ -33,7 +33,38 @@ namespace Senai.Peoples.WebApi.Repositories
             return null;
         }
 
+        public PessoaDomain BuscarPorEmailSenha(string email, string senha)
+        {
+            SqlConnection connection = new SqlConnection(bd);
+            string query = "select IdPessoa, Email, Senha from Pessoas where Email = @Em AND Senha = @Se";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Em", email);
+            command.Parameters.AddWithValue("@Se", senha);
+            connection.Open();
 
+            SqlDataReader leitor = command.ExecuteReader();
+
+            if (leitor.HasRows)
+            {
+                PessoaDomain pessoa = new PessoaDomain();
+                while (leitor.Read())
+                {
+                    pessoa.IdPessoa = Convert.ToInt32(leitor[0]);
+                    pessoa.Email = Convert.ToString(leitor[1]);
+                    pessoa.Senha = Convert.ToString(leitor[2]);
+                    pessoa.tipoUsuario = new TipoUsuarioDomain
+                    {
+                        IdTipoUsuario = Convert.ToInt32(leitor[0]),
+                        TipoUsuario = Convert.ToString(leitor[1])
+                    };
+                }
+                connection.Close();
+                return pessoa;
+            }
+
+            connection.Close();
+            return null;
+        }
 
         public PessoaDomain BuscarPorId(int id)
         {
@@ -64,7 +95,8 @@ namespace Senai.Peoples.WebApi.Repositories
         public PessoaDomain BuscarPorNome(string nome)
         {
             SqlConnection connection = new SqlConnection(bd);
-            string query = $"Select IdPessoa, Nome, Sobrenome from Pessoas where Nome like '%{nome}%'";
+            string query = $"Select Pessoas.IdPessoa, TipoUsuario.IdTipoUsuario, Pessoas.Nome, Pessoas.Sobrenome, Pessoas.Email, TipoUsuario.TipoUsuario from Pessoas " +
+                $"inner join TipoUsuario on TipoUsuario.IdTipoUsuario = Pessoas.IdTipoUsuario where Pessoas.Nome like '%{nome}%'";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
 
@@ -75,8 +107,15 @@ namespace Senai.Peoples.WebApi.Repositories
                 PessoaDomain pessoa = new PessoaDomain
                 {
                     IdPessoa = Convert.ToInt32(leitor[0]),
-                    Nome = Convert.ToString(leitor[1]),
-                    Sobrenome = Convert.ToString(leitor[2])
+                    IdTipoUsuario = Convert.ToInt32(leitor[1]),
+                    Nome = Convert.ToString(leitor[2]),
+                    Sobrenome = Convert.ToString(leitor[3]),
+                    Email = Convert.ToString(leitor[4]),
+                    tipoUsuario = new TipoUsuarioDomain
+                    {
+                        IdTipoUsuario = Convert.ToInt32(leitor[5]),
+                        TipoUsuario = Convert.ToString(leitor[6])
+                    }
                 };
                 return pessoa;
             }
@@ -103,7 +142,7 @@ namespace Senai.Peoples.WebApi.Repositories
             List<PessoaDomain> listaPessoas = new List<PessoaDomain>();
             SqlConnection connect = new SqlConnection(bd);
             connect.Open();
-            var queryBanco = "select IdPessoa, Nome, Sobrenome from Pessoas";
+            var queryBanco = "select IdPessoa, Nome, Sobrenome, Email from Pessoas";
             SqlCommand sqlCommand = new SqlCommand(queryBanco, connect);
 
             SqlDataReader leitor;
@@ -115,7 +154,8 @@ namespace Senai.Peoples.WebApi.Repositories
                 {
                     IdPessoa = Convert.ToInt32(leitor[0]),
                     Nome = Convert.ToString(leitor[1]),
-                    Sobrenome = Convert.ToString(leitor[2])
+                    Sobrenome = Convert.ToString(leitor[2]),
+                    Email = Convert.ToString(leitor[3])
                 };
                 listaPessoas.Add(pessoas);
             }
@@ -127,15 +167,18 @@ namespace Senai.Peoples.WebApi.Repositories
 
         public PessoaDomain Post(PessoaDomain pessoa)
         {
-            string comando = "insert into Pessoas(Nome,Sobrenome)values(@va,@vb)";
+            string comando = "insert into Pessoas(IdTipoUsuario,Nome,Sobrenome,Email,Senha)values(@va,@vb,@vc,@vd,@ve)";
             using (SqlConnection con = new SqlConnection(bd))
             {
                 SqlCommand command = new SqlCommand(comando, con);
-                command.Parameters.AddWithValue("@va", pessoa.Nome);
-                command.Parameters.AddWithValue("@vb", pessoa.Sobrenome);
-
+                command.Parameters.AddWithValue("@va", pessoa.IdTipoUsuario);
+                command.Parameters.AddWithValue("@vb", pessoa.Nome);
+                command.Parameters.AddWithValue("@vc", pessoa.Sobrenome);
+                command.Parameters.AddWithValue("@vd", pessoa.Email);
+                command.Parameters.AddWithValue("@ve", pessoa.Senha);
                 con.Open();
                 command.ExecuteNonQuery();
+                con.Close();
                 return pessoa;
             }
         }

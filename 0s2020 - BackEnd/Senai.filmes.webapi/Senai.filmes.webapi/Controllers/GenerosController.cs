@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.filmes.webapi.Domains;
@@ -23,16 +24,14 @@ namespace Senai.filmes.webapi.Controllers
         }
 
 
-
-
-
+        [Authorize]
         [HttpGet]
         public IEnumerable<GenerosDomain> Get()
         {
             return dominio.ListarGeneros();
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post(GenerosDomain generosDomain)
         {

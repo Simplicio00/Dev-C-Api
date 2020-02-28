@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Senai.Peoples.WebApi.Domains;
 using Senai.Peoples.WebApi.Interfaces;
 using Senai.Peoples.WebApi.Repositories;
@@ -21,7 +26,10 @@ namespace Senai.Peoples.WebApi.Controller
             pessoa = new PessoaRepository();
         }
 
+        // Requisições
 
+
+        [Authorize]
         [HttpGet]
         public IActionResult BuscarTodos()
         {
@@ -42,17 +50,17 @@ namespace Senai.Peoples.WebApi.Controller
         public IActionResult Cadastrar(PessoaDomain pessoa)
         {
             try
-                {
-                    this.pessoa.Post(pessoa);
-                    return Ok(this.pessoa.Listar());
-                }
-                catch (Exception ex)
-                {
-                    return BadRequest(ex.Message);
-                }
+            {
+                this.pessoa.Post(pessoa);
+                return Ok(this.pessoa.Listar());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
-
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult BuscaPeloId(int id)
         {
@@ -85,6 +93,7 @@ namespace Senai.Peoples.WebApi.Controller
             }
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(int id, PessoaDomain pessoa)
         {
@@ -95,8 +104,8 @@ namespace Senai.Peoples.WebApi.Controller
             {
                 try
                 {
-                   this.pessoa.Atualizar(id, pessoa);
-                   return Ok(this.pessoa.Listar());
+                    this.pessoa.Atualizar(id, pessoa);
+                    return Ok(this.pessoa.Listar());
                 }
                 catch (Exception)
                 {
@@ -118,16 +127,52 @@ namespace Senai.Peoples.WebApi.Controller
                 {
                     return Ok(pessoa.BuscarPorNome(nome));
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    return NotFound(ex.Message);
                 }
             }
             else
             {
-               return BadRequest();
+                return BadRequest();
             }
-            
+
+        }
+
+
+
+        /////////// login //////////////////////  \o/ \\\\\\\\\\\\\\\\ \o/
+
+        // Parte do login
+
+
+        [HttpPost("login")]
+        public IActionResult Post(PessoaDomain pessoa)
+        {
+            PessoaDomain domain = this.pessoa.BuscarPorEmailSenha(pessoa.Email, pessoa.Senha);
+            if (domain == null)
+            {
+                return NotFound("Email ou senha inválidos");
+            }
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Email, domain.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, domain.IdTipoUsuario.ToString()),
+                new Claim(ClaimTypes.Role, domain.tipoUsuario.TipoUsuario),
+            };
+
+            var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("teste"));
+            var credencial = new SigningCredentials(chave, SecurityAlgorithms.HmacSha256);
+            var token = new JwtSecurityToken(
+                issuer: "Senai.Peoples", 
+                audience: "Senai.Peoples", 
+                claims: claims, 
+                expires: DateTime.Now.AddMinutes(30), 
+                signingCredentials: credencial);
+
+           IdentityModelEventSource.ShowPII = true;
+
+            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token)});
         }
 
 

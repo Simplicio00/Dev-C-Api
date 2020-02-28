@@ -29,8 +29,8 @@ namespace Senai.filmes.webapi
                     ValidateLifetime = true,
                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("filmes-chave-autenticacao")),
                     ClockSkew = TimeSpan.FromMinutes(30),
-                    ValidIssuer = "Senai.Filmes.WebApi",
-                    ValidAudience = "Senai.Filmes.WebApi"
+                    ValidIssuer = "Senai.filmes.webApi",
+                    ValidAudience = "Senai.filmes.webApi"
                 };
                 });
 		}
