@@ -11,6 +11,7 @@ namespace Senai.Peoples.WebApi.Repositories
     public class PessoaRepository : IPessoa
     {
         private string bd = "Data Source=DEV101\\SQLEXPRESS; initial catalog=people_senai_bk; user Id=sa; pwd=sa@132";
+        //private string bd = "Data Source=LUCASSOLIVEIRA\\SQLEXPRESS; initial catalog=people_senai_bk; integrated security=true;";
 
 
 
@@ -95,8 +96,7 @@ namespace Senai.Peoples.WebApi.Repositories
         public PessoaDomain BuscarPorNome(string nome)
         {
             SqlConnection connection = new SqlConnection(bd);
-            string query = $"Select Pessoas.IdPessoa, TipoUsuario.IdTipoUsuario, Pessoas.Nome, Pessoas.Sobrenome, Pessoas.Email, TipoUsuario.TipoUsuario from Pessoas " +
-                $"inner join TipoUsuario on TipoUsuario.IdTipoUsuario = Pessoas.IdTipoUsuario where Pessoas.Nome like '%{nome}%'";
+            string query = $" Select IdPessoa, Nome, Sobrenome, Email, Senha,TipoUsuario.TipoUsuario from Pessoas inner join TipoUsuario on TipoUsuario.IdTipoUsuario = Pessoas.IdTipoUsuario where Pessoas.Nome like '%{nome}%';";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
 
@@ -107,14 +107,14 @@ namespace Senai.Peoples.WebApi.Repositories
                 PessoaDomain pessoa = new PessoaDomain
                 {
                     IdPessoa = Convert.ToInt32(leitor[0]),
-                    IdTipoUsuario = Convert.ToInt32(leitor[1]),
-                    Nome = Convert.ToString(leitor[2]),
-                    Sobrenome = Convert.ToString(leitor[3]),
-                    Email = Convert.ToString(leitor[4]),
+                    Nome = Convert.ToString(leitor[1]),
+                    Sobrenome = Convert.ToString(leitor[2]),
+                    Email = Convert.ToString(leitor[3]),
+                    Senha = Convert.ToString(leitor[2]),
                     tipoUsuario = new TipoUsuarioDomain
                     {
-                        IdTipoUsuario = Convert.ToInt32(leitor[5]),
-                        TipoUsuario = Convert.ToString(leitor[6])
+                        IdTipoUsuario = Convert.ToInt32(leitor[0]),
+                        TipoUsuario = Convert.ToString(leitor[1])
                     }
                 };
                 return pessoa;

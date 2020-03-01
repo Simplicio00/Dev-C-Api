@@ -157,15 +157,15 @@ namespace Senai.Peoples.WebApi.Controller
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Email, domain.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, domain.IdTipoUsuario.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, domain.IdPessoa.ToString()),
                 new Claim(ClaimTypes.Role, domain.tipoUsuario.TipoUsuario),
             };
 
-            var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("teste"));
+            var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("teste-chave-autenticacao"));
             var credencial = new SigningCredentials(chave, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
-                issuer: "Senai.Peoples", 
-                audience: "Senai.Peoples", 
+                issuer: "Senai.Peoples.WebApi", 
+                audience: "Senai.Peoples.WebApi", 
                 claims: claims, 
                 expires: DateTime.Now.AddMinutes(30), 
                 signingCredentials: credencial);

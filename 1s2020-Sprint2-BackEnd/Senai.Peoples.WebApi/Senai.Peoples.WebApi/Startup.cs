@@ -26,13 +26,12 @@ namespace Senai.Peoples.WebApi
                         ValidateIssuer = true,
                         ValidateAudience = true,
                         ValidateLifetime = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("teste")),
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("teste-chave-autenticacao")),
                         ClockSkew = TimeSpan.FromMinutes(30),
-                        ValidIssuer = "Senai.Peoples",
-                        ValidAudience = "Senai.Peoples"
+                        ValidIssuer = "Senai.Peoples.WebApi",
+                        ValidAudience = "Senai.Peoples.WebApi"
                     };
                 });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
