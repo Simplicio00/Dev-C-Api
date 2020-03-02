@@ -1,0 +1,16 @@
+listar todos os usuários
+
+listar todos os estúdios
+
+listar todos os jogos
+
+listar todos os jogos e seus respectivos estúdios
+
+
+
+
+Buscar e trazer na lista todos os estúdios, mesmo que eles não contenham nenhum jogo de referência; 
+  Buscar um usuário por email e senha; 
+  Buscar um jogo por IdJogo; 
+  Buscar um estúdio por IdEstudio; 
+  
