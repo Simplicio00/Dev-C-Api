@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai.Inlock.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Senai.Inlock.WebApi.Controllers.LoginController.Autenticar(Senai.Inlock.WebApi.Domains.UsuariosDomain)">
+            <summary>
+            Processo de login do usuário. 
+            </summary>
+            <param name="usuarios"></param>
+            <returns>Retorna uma chave de acesso privada (token)</returns>
+        </member>
+    </members>
+</doc>

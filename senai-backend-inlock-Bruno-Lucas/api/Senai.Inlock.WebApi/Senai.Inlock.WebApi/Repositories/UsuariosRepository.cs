@@ -10,7 +10,7 @@ namespace Senai.Inlock.WebApi.Repositories
 {
     public class UsuariosRepository : UsuariosInterface
     {
-        private string banco = "Data Source=LUCASSOLIVEIRA\\SQLEXPRESS; initial catalog=InLock_Games_Manha; integrated security=true;";
+        private string banco = "Data Source=DEV101\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user Id=sa; pwd=sa@132";
 
 
 
@@ -20,7 +20,7 @@ namespace Senai.Inlock.WebApi.Repositories
         public UsuariosDomain Comparar(string Email, string Senha)
         {
             SqlConnection conexao = new SqlConnection(banco);
-            string query = $"select IdUsuario, Email, Senha from Usuarios where Email like '{Email}' AND Senha like '{Senha}'";
+            string query = $"select IdUsuario, Email, Senha, IdTipoUsuario from Usuarios where Email like '{Email}' AND Senha like '{Senha}'";
             SqlCommand sqlcomando = new SqlCommand(query, conexao);
             conexao.Open();
             SqlDataReader leitor;
@@ -33,16 +33,17 @@ namespace Senai.Inlock.WebApi.Repositories
                     usuario.IdUsuario = Convert.ToInt32(leitor[0]);
                     usuario.Email = Convert.ToString(leitor[1]);
                     usuario.Senha = Convert.ToString(leitor[2]);
+                    usuario.IdTipoUsuario = Convert.ToInt32(leitor[3]);
                     usuario.TiposUsuario = new TiposUsuarioDomain
                     {
-                        IdTipoUsuario = Convert.ToInt32(leitor[0]),
-                        Titulo = Convert.ToString(leitor[1])
+                        IdTipoUsuario = Convert.ToInt32(leitor[3]),
+                        Titulo = Convert.ToString(leitor[3])
                     };
                 }
                 conexao.Close();
                 return usuario;
             }
-            return default;
+            return null;
         }
 
 

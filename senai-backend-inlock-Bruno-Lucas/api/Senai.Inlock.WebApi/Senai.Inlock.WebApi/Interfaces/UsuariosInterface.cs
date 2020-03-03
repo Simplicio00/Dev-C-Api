@@ -9,8 +9,5 @@ namespace Senai.Inlock.WebApi.Interfaces
     interface UsuariosInterface
     {
        UsuariosDomain Comparar(string Email, string Senha);
-
-       List<UsuariosDomain> Listar();
-
     }
 }

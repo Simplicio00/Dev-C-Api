@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Inlock.WebApi.Interfaces;
@@ -10,29 +11,17 @@ using Senai.Inlock.WebApi.Repositories;
 namespace Senai.Inlock.WebApi.Controllers
 {
     [Produces("application/json")]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class UsuariosController : ControllerBase
     {
         private UsuariosInterface usuarios;
-        public UsuarioController()
+        public UsuariosController()
         {
             usuarios =  new UsuariosRepository();
         }
         
-
-        [HttpGet]
-        public IActionResult Listagem()
-        {
-            var lista = usuarios.Listar();
-            if (lista != null)
-            {
-                return Ok(lista);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
+        
     }
 }

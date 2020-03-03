@@ -16,17 +16,22 @@ namespace Senai.Inlock.WebApi.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class LoginsController : ControllerBase
     {
         private UsuariosInterface usuarios;
 
-        public LoginController()
+        public LoginsController()
         {
             usuarios = new UsuariosRepository();
         }
 
 
 
+        /// <summary>
+        /// Processo de login do usuário. 
+        /// </summary>
+        /// <param name="usuarios"></param>
+        /// <returns>Retorna uma chave de acesso privada (token)</returns>
         [HttpPost]
         public IActionResult Autenticar(UsuariosDomain usuarios)
         {
