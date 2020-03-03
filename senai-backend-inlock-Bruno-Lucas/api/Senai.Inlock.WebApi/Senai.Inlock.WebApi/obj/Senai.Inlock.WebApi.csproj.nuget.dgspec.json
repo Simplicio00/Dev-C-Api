@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj": {}
+    "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj": {
+    "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj",
         "projectName": "Senai.Inlock.WebApi",
-        "projectPath": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj",
+        "projectPath": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\senai-backend-inlock-Bruno-Lucas\\api\\Senai.Inlock.WebApi\\Senai.Inlock.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -64,9 +64,9 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.1.9, )"
+              "version": "[2.1.10, )"
             },
-            "Swashbuckle.AspNetCore.Swagger": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0, )"
             },

@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Senai.Inlock.WebApi.Interfaces
 {
-    interface UsuariosInterface
+    interface IJogosRepository
     {
-        UsuariosDomain Comparar(string Email, string Senha);
+        List<JogosDomain> Get();
 
-        List<UsuariosDomain> Listar();
+        void Post(JogosDomain Filme);
 
-        UsuariosDomain Cadastrar(UsuariosDomain usuarios);
+        JogosDomain Delete(int id);
 
+        JogosDomain BuscarPorId(int id);
     }
 }

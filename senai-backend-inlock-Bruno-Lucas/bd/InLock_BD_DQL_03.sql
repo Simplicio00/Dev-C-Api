@@ -1,3 +1,7 @@
+use InLock_Games_Manha
+
+go
+
 SELECT IdUsuario, Email, Senha, TiposUsuario.IdTipoUsuario, Titulo FROM Usuarios
 INNER JOIN TiposUsuario ON TiposUsuario.IdTipoUsuario = Usuarios.IdTipoUsuario;
 

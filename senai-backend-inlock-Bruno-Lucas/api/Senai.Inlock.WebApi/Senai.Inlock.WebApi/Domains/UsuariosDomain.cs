@@ -18,7 +18,7 @@ namespace Senai.Inlock.WebApi.Domains
         [DataType(DataType.Password)]
         [StringLength(20, MinimumLength = 3, ErrorMessage = "O mínimo necessário para inserir a senha é 3 caracteres.")]
         public string Senha { get; set; }
-
+        [Required(ErrorMessage = "Informe o tipo do usuário (1 ou 2)")]
         public int IdTipoUsuario { get; set; }
 
         public TiposUsuarioDomain TiposUsuario { get; set; }

@@ -4,12 +4,73 @@
         <name>Senai.Inlock.WebApi</name>
     </assembly>
     <members>
+        <member name="M:Senai.Inlock.WebApi.Controllers.EstudiosController.Listagem">
+            <summary>
+            Faz listagem dos estúdios 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.EstudiosController.BuscarEstudioPorId(System.Int32)">
+            <summary>
+            Consulta um estúdio específico pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.EstudiosController.Cadastrar(Senai.Inlock.WebApi.Domains.EstudiosDomain)">
+            <summary>
+            Faz o cadastro de um estúdio
+            </summary>
+            <param name="estudios"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.JogosController.Get">
+            <summary>
+            Lista de Jogos
+            </summary>
+            <returns>Retorna a lista de jogos</returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.JogosController.Post(Senai.Inlock.WebApi.Domains.JogosDomain)">
+            <summary>
+            Cadastrar Jogo
+            </summary>
+            <param name="novoJogo"></param>
+            <returns> Cadastra um novo jogo</returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.JogosController.GetPorId(System.Int32)">
+            <summary>
+            Um método que busca pelo id do usuário
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.JogosController.Deletar(System.Int32)">
+            <summary>
+            Um método que deleta um usuário existente no banco de dados
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            
+        </member>
         <member name="M:Senai.Inlock.WebApi.Controllers.LoginController.Autenticar(Senai.Inlock.WebApi.Domains.UsuariosDomain)">
             <summary>
             Processo de login do usuário. 
             </summary>
             <param name="usuarios"></param>
             <returns>Retorna uma chave de acesso privada (token)</returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.UsuariosController.Listagem">
+            <summary>
+            Faz a listagem de todos os usuários cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Inlock.WebApi.Controllers.UsuariosController.Cadastrar(Senai.Inlock.WebApi.Domains.UsuariosDomain)">
+            <summary>
+            Faz o cadastro de um usuário
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

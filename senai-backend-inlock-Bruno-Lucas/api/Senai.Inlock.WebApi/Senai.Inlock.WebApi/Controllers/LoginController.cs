@@ -16,11 +16,11 @@ namespace Senai.Inlock.WebApi.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginsController : ControllerBase
+    public class LoginController : ControllerBase
     {
         private UsuariosInterface usuarios;
 
-        public LoginsController()
+        public LoginController()
         {
             usuarios = new UsuariosRepository();
         }
@@ -63,7 +63,6 @@ namespace Senai.Inlock.WebApi.Controllers
                 return NotFound(mensagemErro);
             }
         }
-
 
     }
 }

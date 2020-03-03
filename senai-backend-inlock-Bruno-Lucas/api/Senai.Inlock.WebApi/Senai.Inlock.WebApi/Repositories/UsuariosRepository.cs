@@ -10,7 +10,21 @@ namespace Senai.Inlock.WebApi.Repositories
 {
     public class UsuariosRepository : UsuariosInterface
     {
-        private string banco = "Data Source=DEV101\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user Id=sa; pwd=sa@132";
+        //private string banco = "Data Source=DEV101\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user Id=sa; pwd=sa@132";
+        private string banco = "Data Source=LUCASSOLIVEIRA\\SQLEXPRESS; initial catalog=InLock_Games_Manha; integrated security=true;";
+
+
+
+        public UsuariosDomain Cadastrar(UsuariosDomain usuarios)
+        {
+            SqlConnection connection = new SqlConnection(banco);
+            string query = $"insert into Usuarios(Email,Senha, IdTipoUsuario)values('{usuarios.Email}','{usuarios.Senha}',{usuarios.IdTipoUsuario})";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+            return usuarios;
+        }
 
 
 
@@ -56,7 +70,7 @@ namespace Senai.Inlock.WebApi.Repositories
         {
             List<UsuariosDomain> listarPessoas = new List<UsuariosDomain>();
             SqlConnection conexao = new SqlConnection(banco);
-            var query = "select IdUsuario, Email, Senha, TiposUsuario.Titulo from Usuarios " +
+            var query = "select IdUsuario, Email, Senha, TiposUsuario.IdTipoUsuario, Titulo from Usuarios " +
                 "inner join TiposUsuario on TiposUsuario.IdTipoUsuario = Usuarios.IdTipoUsuario";
             SqlCommand comando = new SqlCommand(query, conexao);
             conexao.Open();
@@ -69,10 +83,11 @@ namespace Senai.Inlock.WebApi.Repositories
                     IdUsuario = Convert.ToInt32(leitor[0]),
                     Email = Convert.ToString(leitor[1]),
                     Senha = Convert.ToString(leitor[2]),
+                    IdTipoUsuario = Convert.ToInt32(leitor[3]),
                     TiposUsuario = new TiposUsuarioDomain
                     {
-                        IdTipoUsuario = Convert.ToInt32(leitor[0]),
-                        Titulo = Convert.ToString(leitor[1])
+                        IdTipoUsuario = Convert.ToInt32(leitor[3]),
+                        Titulo = Convert.ToString(leitor[4])
                     }
                 };
                 listarPessoas.Add(usuarios);
@@ -80,5 +95,7 @@ namespace Senai.Inlock.WebApi.Repositories
             conexao.Close();
             return listarPessoas;
         }
+
+
     }
 }
