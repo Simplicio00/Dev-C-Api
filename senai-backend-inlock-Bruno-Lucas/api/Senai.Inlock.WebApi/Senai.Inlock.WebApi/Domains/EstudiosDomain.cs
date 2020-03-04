@@ -11,5 +11,7 @@ namespace Senai.Inlock.WebApi.Domains
         public int IdEstudio { get; set; }
         [Required(ErrorMessage = "O nome do estúdio é obrigatório")]
         public string NomeEstudio { get; set; }
+
+        public List<JogosDomain> Jogos { get; set; }
     }
 }

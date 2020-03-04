@@ -10,10 +10,11 @@ namespace Senai.Inlock.WebApi.Repositories
 {
 	public class EstudiosRepository : EstudiosInterface
 	{
-		private string banco = "Data Source=LUCASSOLIVEIRA\\SQLEXPRESS; initial catalog=InLock_Games_Manha; integrated security=true;";
+        private string banco = "Data Source=DEV101\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user Id=sa; pwd=sa@132";
 
 
-		public List<EstudiosDomain> Listar()
+
+        public List<EstudiosDomain> Listar()
 		{
 			List<EstudiosDomain> lista = new List<EstudiosDomain>();
 			SqlConnection conexao = new SqlConnection(banco);
@@ -27,7 +28,7 @@ namespace Senai.Inlock.WebApi.Repositories
 				EstudiosDomain estudios = new EstudiosDomain
 				{
 					IdEstudio = Convert.ToInt32(leitor[0]),
-					NomeEstudio = Convert.ToString(leitor[1])
+					NomeEstudio = Convert.ToString(leitor[1]),
 				};
 				lista.Add(estudios);
 			}

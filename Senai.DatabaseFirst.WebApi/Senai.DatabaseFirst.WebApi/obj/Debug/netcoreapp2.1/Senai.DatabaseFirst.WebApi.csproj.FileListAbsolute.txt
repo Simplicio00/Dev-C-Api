@@ -1,0 +1,14 @@
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.deps.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.runtimeconfig.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.runtimeconfig.dev.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.dll
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.csprojAssemblyReference.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.RazorAssemblyInfo.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.RazorAssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.AssemblyInfoInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.AssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.pdb
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.dll
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.DatabaseFirst.WebApi\Senai.DatabaseFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.DatabaseFirst.WebApi.pdb
