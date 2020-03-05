@@ -23,6 +23,7 @@ namespace Senai.Inlock.WebApi.Controllers
 
         public JogosController()
         {
+            estudios = new EstudiosRepository();
             _jogosRepository = new JogosRepository();
         }
 
@@ -101,17 +102,22 @@ namespace Senai.Inlock.WebApi.Controllers
         [HttpGet("Estudios/{id}")]
         public IActionResult ListarJogosPorEstudio(int id)
         {
-                    try
-                    {
-                        return Ok(_jogosRepository.ListarPorEstudio(id));
-                    }
-                    catch (Exception ex)
-                    {
-                        return NotFound(ex.Message);
-                    }
-
-            
-           
+            var bd = estudios.BuscarPorId(id);
+            if (bd != null)
+            {
+                try
+                {
+                    return Ok(_jogosRepository.ListarPorEstudio(id));
+                }
+                catch (Exception ex)
+                {
+                    return NotFound(ex.Message);
+                }
+            }
+            else
+            {
+                return NotFound("A lista está vazia");
+            }
         }
     }
 }
