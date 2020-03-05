@@ -18,6 +18,7 @@ namespace Senai.Inlock.WebApi.Controllers
 
     public class JogosController : ControllerBase
     {
+        private EstudiosInterface estudios { get; set; }
         private IJogosRepository _jogosRepository { get; set; }
 
         public JogosController()
@@ -66,7 +67,7 @@ namespace Senai.Inlock.WebApi.Controllers
         {
             try
             {
-               return Ok(_jogosRepository.BuscarPorId(id));
+                return Ok(_jogosRepository.BuscarPorId(id));
             }
             catch (Exception ex)
             {
@@ -95,6 +96,22 @@ namespace Senai.Inlock.WebApi.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        [HttpGet("Estudios/{id}")]
+        public IActionResult ListarJogosPorEstudio(int id)
+        {
+                    try
+                    {
+                        return Ok(_jogosRepository.ListarPorEstudio(id));
+                    }
+                    catch (Exception ex)
+                    {
+                        return NotFound(ex.Message);
+                    }
+
+            
+           
         }
     }
 }

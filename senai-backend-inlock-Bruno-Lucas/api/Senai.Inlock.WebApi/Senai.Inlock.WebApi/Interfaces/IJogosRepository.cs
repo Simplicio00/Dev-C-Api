@@ -15,5 +15,7 @@ namespace Senai.Inlock.WebApi.Interfaces
         JogosDomain Delete(int id);
 
         JogosDomain BuscarPorId(int id);
+
+        List<JogosDomain> ListarPorEstudio(int id);
     }
 }

@@ -11,7 +11,7 @@ namespace Senai.Inlock.WebApi.Repositories
     public class JogosRepository : IJogosRepository
     {
         // private string stringConexao = "Data Source=DEV301\\SQLEXPRESS; initial catalog=Inlock_Games_Manha; user Id=sa; pwd=sa@132";
-        private string stringConexao = "Data Source=DEV101\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user Id=sa; pwd=sa@132";
+        private string stringConexao = "Data Source=LUCASSOLIVEIRA\\SQLEXPRESS; initial catalog=InLock_Games_Manha; integrated security=true;";
 
         public JogosDomain BuscarPorId(int id)
         {
@@ -119,5 +119,36 @@ namespace Senai.Inlock.WebApi.Repositories
             }
         }
 
+        List<JogosDomain> IJogosRepository.ListarPorEstudio(int id)
+        {
+            List<JogosDomain> domains = new List<JogosDomain>();
+            SqlConnection connection = new SqlConnection(stringConexao);
+            string query = $"SELECT J.IdJogo, J.NomeJogo, J.Descricao, J.DataLancamento, J.Valor, J.IdEstudio, E.NomeEstudio FROM Jogos J " +
+                $"INNER JOIN Estudios E ON J.IdEstudio = E.IdEstudio WHERE E.IdEstudio = {id}";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader leitor;
+            connection.Open();
+            leitor = command.ExecuteReader();
+            while (leitor.Read())
+            {
+                JogosDomain jogos = new JogosDomain
+                {
+                    IdJogo = Convert.ToInt32(leitor[0]),
+                    NomeJogo = Convert.ToString(leitor[1]),
+                    Descricao = Convert.ToString(leitor[2]),
+                    DataLancamento = Convert.ToDateTime(leitor[3]),
+                    Valor = Convert.ToString(leitor[4]),
+                    IdEstudio = Convert.ToInt32(leitor[5]),
+                    Estudios = new EstudiosDomain
+                    {
+                        IdEstudio = Convert.ToInt32(leitor[5]),
+                        NomeEstudio = Convert.ToString(leitor[6])
+                    }
+                };
+                domains.Add(jogos);
+            }
+            connection.Close();
+            return domains;
+        }
     }
 }

@@ -10,9 +10,10 @@ namespace Senai.Inlock.WebApi.Repositories
 {
 	public class EstudiosRepository : EstudiosInterface
 	{
-        private string banco = "Data Source=DEV101\\SQLEXPRESS; initial catalog=InLock_Games_Manha; user Id=sa; pwd=sa@132";
+        private string banco = "Data Source=LUCASSOLIVEIRA\\SQLEXPRESS; initial catalog=InLock_Games_Manha; integrated security=true";
 
 
+		private IJogosRepository jogos;
 
         public List<EstudiosDomain> Listar()
 		{
@@ -67,6 +68,29 @@ namespace Senai.Inlock.WebApi.Repositories
 			SqlCommand command = new SqlCommand(query, connection);
 			connection.Open();
 			command.ExecuteNonQuery();
+			connection.Close();
+			return estudios;
+		}
+
+		public List<EstudiosDomain> ListarComJogos()
+		{
+			List<EstudiosDomain> estudios = new List<EstudiosDomain>();
+			SqlConnection connection = new SqlConnection(banco);
+			var query = "SELECT E.IdEstudio, E.NomeEstudio FROM Estudios E";
+			SqlCommand command = new SqlCommand(query,connection);
+			connection.Open();
+			SqlDataReader leitor;
+			leitor = command.ExecuteReader();
+			while (leitor.Read())
+			{
+				EstudiosDomain estudios1 = new EstudiosDomain
+				{
+					IdEstudio = Convert.ToInt32(leitor["IdEstudio"]),
+					NomeEstudio = leitor["NomeEstudio"].ToString(),
+					Jogos = jogos.ListarPorEstudio(Convert.ToInt32(leitor["IdEstudio"]))
+				};
+				estudios.Add(estudios1);
+			}
 			connection.Close();
 			return estudios;
 		}

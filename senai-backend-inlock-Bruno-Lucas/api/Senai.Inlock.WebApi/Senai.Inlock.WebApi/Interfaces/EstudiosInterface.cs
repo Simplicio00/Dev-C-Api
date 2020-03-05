@@ -12,5 +12,7 @@ namespace Senai.Inlock.WebApi.Interfaces
 		 EstudiosDomain BuscarPorId(int id);
 		 EstudiosDomain Cadastrar(EstudiosDomain estudios);
 
+		List<EstudiosDomain> ListarComJogos();
+
 	}
 }

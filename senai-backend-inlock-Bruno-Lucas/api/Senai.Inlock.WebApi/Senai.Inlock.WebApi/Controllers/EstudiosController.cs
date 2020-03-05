@@ -79,5 +79,19 @@ namespace Senai.Inlock.WebApi.Controllers
 				return BadRequest(ex.Message);			
 			}
 		}
+
+		[HttpGet("List")]
+		public IActionResult ListarComJogos()
+		{
+			var db = estudios.ListarComJogos();
+			if (db != null)
+			{
+				return Ok(db);
+			}
+			else
+			{
+				return NotFound("A lista está vazia");
+			}
+		}
 	}
 }
