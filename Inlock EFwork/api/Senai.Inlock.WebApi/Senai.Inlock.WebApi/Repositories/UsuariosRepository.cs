@@ -14,10 +14,16 @@ namespace Senai.Inlock.WebApi.Repositories
 
         public Usuarios Atualizar(Usuarios usuario, int id)
         {
-            banco.Usuarios.FirstOrDefault(a => a.IdUsuario == id);
-            banco.Usuarios.Update(usuario);
+            Usuarios usuarioBuscado = banco.Usuarios.FirstOrDefault(a => a.IdUsuario == id);
+            usuarioBuscado.Email = usuario.Email;
+            banco.Usuarios.Update(usuarioBuscado);
             banco.SaveChanges();
             return usuario;
+        }
+
+        public Usuarios BuscarPeloId(int id)
+        {
+            return banco.Usuarios.First(c => c.IdUsuario == id);
         }
 
         public Usuarios Cadastrar(Usuarios usuarios)
@@ -36,5 +42,7 @@ namespace Senai.Inlock.WebApi.Repositories
         {
             return banco.Usuarios.ToList();
         }
+
+
     }
 }

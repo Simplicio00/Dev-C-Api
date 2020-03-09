@@ -16,5 +16,7 @@ namespace Senai.Inlock.WebApi.Interfaces
 
         Usuarios Atualizar(Usuarios usuario,int id);
 
+        Usuarios BuscarPeloId(int id);
+
     }
 }

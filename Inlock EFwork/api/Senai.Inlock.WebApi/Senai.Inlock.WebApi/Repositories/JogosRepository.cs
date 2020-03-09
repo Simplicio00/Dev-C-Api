@@ -1,4 +1,5 @@
-﻿using Senai.Inlock.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.Inlock.WebApi.Domains;
 using Senai.Inlock.WebApi.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -31,8 +32,10 @@ namespace Senai.Inlock.WebApi.Repositories
 
         public List<Jogos> ListarPorEstudio(int id)
         {
-           var dc = banco.Jogos.ToList().Where(a => a.IdEstudio == id);
+           var dc = banco.Jogos.Include(b => b.IdEstudioNavigation).Where(a => a.IdEstudio == id);
             return dc.ToList();
+
+         //  return banco.Jogos.ToList().FindAll(j => j.IdEstudio == id);
         }
 
         public Jogos Post(Jogos Filme)

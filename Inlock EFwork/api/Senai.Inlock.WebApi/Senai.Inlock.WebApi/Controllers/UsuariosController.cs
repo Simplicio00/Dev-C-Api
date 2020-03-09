@@ -61,5 +61,19 @@ namespace Senai.Inlock.WebApi.Controllers
         }
 
 
+        [HttpPut]
+        public IActionResult Atualizar(Usuarios usuario, int id)
+        {
+            var sr = usuarios.BuscarPeloId(id);
+            if (sr != null)
+            {
+                return Ok(usuarios.Atualizar(usuario, id));
+            }
+            else
+            {
+                return NotFound("O usuário não foi encontrado...");
+            }
+        }
+
     }
 }

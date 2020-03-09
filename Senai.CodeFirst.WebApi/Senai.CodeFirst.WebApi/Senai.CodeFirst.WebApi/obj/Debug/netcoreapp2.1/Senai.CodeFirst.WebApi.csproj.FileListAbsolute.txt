@@ -1,0 +1,11 @@
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.deps.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.runtimeconfig.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.runtimeconfig.dev.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\bin\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.dll
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.csprojAssemblyReference.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.RazorAssemblyInfo.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.RazorAssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.AssemblyInfoInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.AssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\Senai.CodeFirst.WebApi\obj\Debug\netcoreapp2.1\Senai.CodeFirst.WebApi.RazorTargetAssemblyInfo.cache

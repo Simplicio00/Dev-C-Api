@@ -41,8 +41,7 @@ namespace Senai.Inlock.WebApi
                        ValidIssuer = "Senai.Inlock.WebApi",
                        ValidAudience = "Senai.Inlock.WebApi"
                    };
-               });
-            
+               }); 
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -51,7 +50,7 @@ namespace Senai.Inlock.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -60,6 +59,7 @@ namespace Senai.Inlock.WebApi
 
             app.UseAuthentication();
             app.UseMvc();
+
         }
     }
 }
