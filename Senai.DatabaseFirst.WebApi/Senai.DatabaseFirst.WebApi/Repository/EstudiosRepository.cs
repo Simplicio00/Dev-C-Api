@@ -7,8 +7,28 @@ using System.Threading.Tasks;
 
 namespace Senai.DatabaseFirst.WebApi.Repository
 {
-    interface EstudiosRepository : EstudioInterface
+    class EstudiosRepository : IEstudioRepository
     {
+
+        InlockContext context = new InlockContext();
+
+        public Estudios Cadastrar(Estudios estudio)
+        {
+             context.Estudios.Add(estudio);
+             context.SaveChanges();
+            return estudio;
+        }
+
+        public Estudios getId(int id)
+        {
+            return context.Estudios.FirstOrDefault(e => e.IdEstudio == id);
+        }
+
+        public List<Estudios> Listar()
+        {
+            return context.Estudios.ToList();
+        }
+
 
     }
 }

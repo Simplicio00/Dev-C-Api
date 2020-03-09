@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Senai.DatabaseFirst.WebApi.Interfaces
 {
-    interface EstudioInterface
-    {
+    interface IEstudioRepository
 
+    {
+        List<Estudios> Listar();
+
+        Estudios getId(int id);
+
+        Estudios Cadastrar(Estudios estudio);
     }
 }
