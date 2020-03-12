@@ -1,0 +1,14 @@
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\bin\Debug\netcoreapp2.1\Gufi.Senai.WebApi.deps.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\bin\Debug\netcoreapp2.1\Gufi.Senai.WebApi.runtimeconfig.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\bin\Debug\netcoreapp2.1\Gufi.Senai.WebApi.runtimeconfig.dev.json
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\bin\Debug\netcoreapp2.1\Gufi.Senai.WebApi.dll
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.csprojAssemblyReference.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.RazorAssemblyInfo.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.RazorAssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.AssemblyInfoInputs.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.AssemblyInfo.cs
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\bin\Debug\netcoreapp2.1\Gufi.Senai.WebApi.pdb
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.dll
+C:\Users\47944333873\Desktop\backend\Dev-C-Api\01 Gufi\Gufi.Senai.WebApi\Gufi.Senai.WebApi\obj\Debug\netcoreapp2.1\Gufi.Senai.WebApi.pdb
