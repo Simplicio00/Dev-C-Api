@@ -26,8 +26,7 @@ namespace Gufi.Senai.WebApi.Domains
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data source=DEV101\\SQLEXPRESS; Initial Catalog=Gufi_Manha; user Id=sa; pwd=sa@132;");
+                optionsBuilder.UseSqlServer("Data source=LUCASSOLIVEIRA\\SQLEXPRESS; Initial Catalog=Gufi_Manha; integrated security=true;");
             }
         }
 
