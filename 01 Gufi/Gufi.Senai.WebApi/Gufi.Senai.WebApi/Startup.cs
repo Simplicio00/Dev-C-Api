@@ -78,7 +78,7 @@ namespace Gufi.Senai.WebApi
             });
 
 
-
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

@@ -51,12 +51,12 @@ namespace Gufi.Senai.WebApi.Controllers
             try
             {
                 banco.Post(usuario);
-                var msg = string.Format($"Usuário cadastrado com sucesso / {usuario}");
+                var msg = string.Format($"O usuário {usuario.NomeUsuario.ToString()} foi cadastrado com sucesso");
                 return Ok(msg);
             }
             catch (Exception ex)
             {
-                return NotFound($"Não foi possível cadastrar o usuário ==>> {ex.Message}");
+                return NotFound($"Não foi possível cadastrar o usuário... Motivo ==>> {ex.Message}");
             }
         }
 
@@ -78,7 +78,7 @@ namespace Gufi.Senai.WebApi.Controllers
             }
             else
             {
-                return NotFound("O usuário em questão não existe");
+                return NotFound("O usuário não consta no sistema..");
             }
         }
 
@@ -91,7 +91,7 @@ namespace Gufi.Senai.WebApi.Controllers
                 try
                 {
                     banco.Deletar(id);
-                    return Ok("O usuário foi deletado com sucesso");
+                    return Ok($"O usuário {usuario.NomeUsuario.ToString()} foi deletado com sucesso");
                 }
                 catch (Exception ex)
                 {

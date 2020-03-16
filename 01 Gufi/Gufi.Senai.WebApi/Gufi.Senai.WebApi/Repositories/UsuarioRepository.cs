@@ -69,6 +69,7 @@ namespace Gufi.Senai.WebApi.Repositories
 				usuario1.NomeUsuario = usuario.NomeUsuario;
 				usuario.Senha = usuario.Senha;
 				banco.Usuario.Update(usuario1);
+				banco.SaveChanges();
 				return usuario1;
 			}
 			catch (Exception)
