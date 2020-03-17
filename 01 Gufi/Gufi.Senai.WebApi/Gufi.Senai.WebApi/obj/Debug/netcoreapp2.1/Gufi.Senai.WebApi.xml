@@ -4,5 +4,68 @@
         <name>Gufi.Senai.WebApi</name>
     </assembly>
     <members>
+        <member name="M:Gufi.Senai.WebApi.Controllers.LoginController.Login(System.String,System.String)">
+            <summary>
+            Faz o login do usuário no sistema
+            </summary>
+            <param name="Email">Email inserido que será comparado ao registrado pelo sistema</param>
+            <param name="Senha">Senha inserida que será comparada á registrada pelo sistema</param>
+            <returns>Retorna um token de acesso</returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.PresencaController.Get">
+            <summary>
+            Faz a busca de todas as presenças
+            </summary>
+            <returns>Retorna uma lista com todas presenças</returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.PresencaController.PorPessoa(System.Int32)">
+            <summary>
+            Faz uma busca de todas as presenças no qual um determinado usuário está contido
+            </summary>
+            <param name="id">Identificador único do usuário</param>
+            <returns>Retorna uma lista de eventos dos quais o usuário se inscreveu</returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.PresencaController.Inscrever_Se(Gufi.Senai.WebApi.Domains.Presenca)">
+            <summary>
+            Faz a inscrição de um usuário num evento
+            </summary>
+            <param name="presenca">É o processo de cadastro único num evento</param>
+            <returns>retorna o cadastro concluído</returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.UsuariosController.Get">
+            <summary>
+            Faz a listagem de todos os usuários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.UsuariosController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário pelo seu identificador único
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.UsuariosController.Post(Gufi.Senai.WebApi.Domains.Usuario)">
+            <summary>
+            Faz o cadastro de um usuário no sistema
+            </summary>
+            <param name="usuario">objeto que será cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.UsuariosController.Put(System.Int32,Gufi.Senai.WebApi.Domains.Usuario)">
+            <summary>
+            Faz a modificação dos atributos de um usuário específico.
+            </summary>
+            <param name="id">Armazena o identificador único do usuário</param>
+            <param name="usuario">Armazena o objeto do usuário e compara com o vigorante que será modificado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Remove um usuário do sistema
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

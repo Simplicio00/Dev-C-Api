@@ -14,10 +14,7 @@ namespace Gufi.Senai.WebApi.Interfaces
 		Evento Delete(int id);
 		Evento BuscaPeloId(int id);
 
-		//listar meus eventos
-
 		//Convidar outros usuários
 
-		//Inscrição em evento
 	}
 }

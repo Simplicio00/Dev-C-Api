@@ -9,6 +9,17 @@ namespace Gufi.Senai.WebApi.Interfaces
 	interface InterfacePresenca
 	{
 		List<Presenca> Get();
-		void Aprovacao(string aprovacao, Presenca presenca);
+
+		Presenca Post(Presenca presenca);
+
+		Presenca Aprovacao(int id, Presenca presenca);
+
+		List<Presenca> Confirmadas(string conf);
+
+
+		//listar meus eventos
+		List<Presenca> PresencaPorPessoa(int id);
+
+
 	}
 }

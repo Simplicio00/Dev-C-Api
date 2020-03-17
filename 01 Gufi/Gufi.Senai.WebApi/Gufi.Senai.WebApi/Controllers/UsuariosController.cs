@@ -16,6 +16,10 @@ namespace Gufi.Senai.WebApi.Controllers
     {
         UsuarioRepository banco = new UsuarioRepository();
 
+        /// <summary>
+        /// Faz a listagem de todos os usuários
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -30,6 +34,11 @@ namespace Gufi.Senai.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Busca um usuário pelo seu identificador único
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
@@ -45,6 +54,11 @@ namespace Gufi.Senai.WebApi.Controllers
         }
 
         
+        /// <summary>
+        /// Faz o cadastro de um usuário no sistema
+        /// </summary>
+        /// <param name="usuario">objeto que será cadastrado</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {
@@ -60,6 +74,12 @@ namespace Gufi.Senai.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Faz a modificação dos atributos de um usuário específico.
+        /// </summary>
+        /// <param name="id">Armazena o identificador único do usuário</param>
+        /// <param name="usuario">Armazena o objeto do usuário e compara com o vigorante que será modificado</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Usuario usuario)
         {
@@ -82,6 +102,11 @@ namespace Gufi.Senai.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Remove um usuário do sistema
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

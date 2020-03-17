@@ -21,6 +21,12 @@ namespace Gufi.Senai.WebApi.Controllers
         UsuarioRepository banco = new UsuarioRepository();
 
 
+        /// <summary>
+        /// Faz o login do usuário no sistema
+        /// </summary>
+        /// <param name="Email">Email inserido que será comparado ao registrado pelo sistema</param>
+        /// <param name="Senha">Senha inserida que será comparada á registrada pelo sistema</param>
+        /// <returns>Retorna um token de acesso</returns>
         [HttpPost]
         public IActionResult Login(string Email, string Senha)
         {

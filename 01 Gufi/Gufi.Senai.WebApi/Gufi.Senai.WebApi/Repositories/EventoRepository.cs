@@ -1,5 +1,6 @@
 ﻿using Gufi.Senai.WebApi.Domains;
 using Gufi.Senai.WebApi.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,15 +56,10 @@ namespace Gufi.Senai.WebApi.Repositories
 
 		public List<Evento> Get()
 		{
-			try
-			{
 				return banco.Evento.ToList();
-			}
-			catch (Exception)
-			{
-				return null;
-			}
 		}
+
+		
 
 		public Evento Put(int id, Evento evento)
 		{
