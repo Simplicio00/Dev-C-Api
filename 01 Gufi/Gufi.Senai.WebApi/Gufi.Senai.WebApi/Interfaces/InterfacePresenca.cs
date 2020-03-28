@@ -12,13 +12,16 @@ namespace Gufi.Senai.WebApi.Interfaces
 
 		Presenca Post(Presenca presenca);
 
-		Presenca Aprovacao(int id, Presenca presenca);
+		void Aprovacao(int id, string presenca);
 
-		List<Presenca> Confirmadas(string conf);
+		List<Presenca> Confirmadas();
 
 
 		//listar meus eventos
 		List<Presenca> PresencaPorPessoa(int id);
+
+
+		void Convidar(Presenca convite);
 
 
 	}

@@ -4,7 +4,13 @@
         <name>Gufi.Senai.WebApi</name>
     </assembly>
     <members>
-        <member name="M:Gufi.Senai.WebApi.Controllers.LoginController.Login(System.String,System.String)">
+        <member name="M:Gufi.Senai.WebApi.Controllers.EventosController.Get">
+            <summary>
+            Busca todos os eventos cadastrados
+            </summary>
+            <returns>Retorna uma lista de eventos</returns>
+        </member>
+        <member name="M:Gufi.Senai.WebApi.Controllers.LoginController.Login(Gufi.Senai.WebApi.Domains.Usuario)">
             <summary>
             Faz o login do usuário no sistema
             </summary>
@@ -18,14 +24,14 @@
             </summary>
             <returns>Retorna uma lista com todas presenças</returns>
         </member>
-        <member name="M:Gufi.Senai.WebApi.Controllers.PresencaController.PorPessoa(System.Int32)">
+        <member name="M:Gufi.Senai.WebApi.Controllers.PresencaController.PorPessoa">
             <summary>
             Faz uma busca de todas as presenças no qual um determinado usuário está contido
             </summary>
             <param name="id">Identificador único do usuário</param>
             <returns>Retorna uma lista de eventos dos quais o usuário se inscreveu</returns>
         </member>
-        <member name="M:Gufi.Senai.WebApi.Controllers.PresencaController.Inscrever_Se(Gufi.Senai.WebApi.Domains.Presenca)">
+        <member name="M:Gufi.Senai.WebApi.Controllers.PresencaController.Inscrever_Se(System.Int32)">
             <summary>
             Faz a inscrição de um usuário num evento
             </summary>

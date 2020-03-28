@@ -12362,11 +12362,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\01 Gufi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\soluc\\C#\\Dev-C-Api\\01 Gufi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi.csproj",
       "projectName": "Gufi.Senai.WebApi",
-      "projectPath": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\01 Gufi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi.csproj",
+      "projectPath": "C:\\Users\\Acer\\Desktop\\soluc\\C#\\Dev-C-Api\\01 Gufi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Documents\\SENAI\\EXERCÍCIOS\\escola\\Dev-C-Api\\01 Gufi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Acer\\Desktop\\soluc\\C#\\Dev-C-Api\\01 Gufi\\Gufi.Senai.WebApi\\Gufi.Senai.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

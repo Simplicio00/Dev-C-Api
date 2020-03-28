@@ -12,35 +12,30 @@ namespace Gufi.Senai.WebApi.Repositories
 	{
 		GufiContext banco = new GufiContext();
 
-		public Presenca Aprovacao(int id, Presenca presenca)
-		{
-			Presenca presenca1 = banco.Presenca.FirstOrDefault(a => a.IdPresenca == id);
-			if (presenca1 != null)
-			{
-				presenca1.Situacao = presenca.Situacao;
-				banco.Update(presenca1);
-				banco.SaveChanges();
-				return presenca1;
-			}
-			else
-			{
-				return null;
-			}
-
-		}
 
 
-		public List<Presenca> Confirmadas(string conf)
+		public List<Presenca> Confirmadas()
 		{
 			try
 			{
-				return banco.Presenca.Where(a => a.Situacao == conf).ToList();
+				return banco.Presenca.Where(a => a.Situacao == "confirmada").ToList();
 			}
 			catch (Exception)
 			{
 				return null;
 			}
 		}
+
+
+
+		public void Convidar(Presenca convite)
+		{
+			convite.Situacao = "Não confirmada";
+			banco.Presenca.Add(convite);
+			banco.SaveChanges();
+		}
+
+
 
 		public List<Presenca> Get()
 		{
@@ -56,6 +51,7 @@ namespace Gufi.Senai.WebApi.Repositories
 
 		public Presenca Post(Presenca presenca)
 		{
+				presenca.Situacao = "Não confirmada";
 				banco.Presenca.Add(presenca);
 				banco.SaveChanges();
 				return presenca;
@@ -66,6 +62,43 @@ namespace Gufi.Senai.WebApi.Repositories
 		{
 			return banco.Presenca.Where(pessoa => pessoa.IdUsuario == id)
 				.Include(a => a.IdEventoNavigation).ToList();
+		}
+
+
+
+
+		public void Aprovacao(int id, string presenca)
+		{
+
+			Presenca presenca1 = banco.Presenca.Include(p => p.IdUsuarioNavigation).Include(p => p.IdEventoNavigation).FirstOrDefault(a => a.IdPresenca == id);
+
+			presenca1.Situacao = presenca;
+
+			switch (presenca)
+			{
+				// Se for 1, a situação da presença será "Confirmada"
+				case "1":
+					presenca1.Situacao = "Confirmada";
+					break;
+
+				// Se for 0, a situação da presença será "Recusada"
+				case "0":
+					presenca1.Situacao = "Recusada";
+					break;
+
+				// Se for 2, a situação da presença será "Não confirmada"
+				case "2":
+					presenca1.Situacao = "Não confirmada";
+					break;
+
+				// Se for qualquer valor diferente de 0, 1 e 2, a situação da presença não será alterada
+				default:
+					presenca1.Situacao = presenca1.Situacao;
+					break;
+			}
+
+			banco.Update(presenca1);
+			banco.SaveChanges();
 		}
 	}
 }

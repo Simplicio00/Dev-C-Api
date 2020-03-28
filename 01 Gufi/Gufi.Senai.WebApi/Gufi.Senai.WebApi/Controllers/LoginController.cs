@@ -28,9 +28,9 @@ namespace Gufi.Senai.WebApi.Controllers
         /// <param name="Senha">Senha inserida que será comparada á registrada pelo sistema</param>
         /// <returns>Retorna um token de acesso</returns>
         [HttpPost]
-        public IActionResult Login(string Email, string Senha)
+        public IActionResult Login(Usuario usuario1)
         {
-            Usuario usuario = banco.Comparar(Email,Senha);
+            Usuario usuario = banco.Comparar(usuario1.Email, usuario1.Senha);
             if (usuario != null)
             {
                 var claims = new[]

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Gufi.Senai.WebApi.Domains;
 using Gufi.Senai.WebApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,13 +17,13 @@ namespace Gufi.Senai.WebApi.Controllers
     public class PresencaController : ControllerBase
     {
         PresencaRepository banco = new PresencaRepository();
-        UsuarioRepository banco2 = new UsuarioRepository();
 
         /// <summary>
         /// Faz a busca de todas as presenças
         /// </summary>
         /// <returns>Retorna uma lista com todas presenças</returns>
 
+            [Authorize(Roles ="1")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -41,27 +43,24 @@ namespace Gufi.Senai.WebApi.Controllers
         /// </summary>
         /// <param name="id">Identificador único do usuário</param>
         /// <returns>Retorna uma lista de eventos dos quais o usuário se inscreveu</returns>
-        [HttpGet("{id}")]
-        public IActionResult PorPessoa(int id)
+        [Authorize]
+        [HttpGet("Minhas")]
+        public IActionResult PorPessoa()
         {
-            var usuario = banco2.GetById(id);
-            if (usuario != null)
-            {
-                var lista = banco.PresencaPorPessoa(id);
-                if (lista.Count != 0)
+            var usuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+            var lista = banco.PresencaPorPessoa(usuario);
+
+               if (lista.Count != 0)
                 {
-                    return StatusCode(201, lista);
+                    return Ok(lista);
                 }
                 else
                 {
                     return NotFound("O usuário não se inscreveu em nenhum evento");
                 }
-            }
-            else
-            {
-                return NotFound("Usuário não encontrado");
-            }
-        }
+       }
+           
 
 
         /// <summary>
@@ -69,29 +68,83 @@ namespace Gufi.Senai.WebApi.Controllers
         /// </summary>
         /// <param name="presenca">É o processo de cadastro único num evento</param>
         /// <returns>retorna o cadastro concluído</returns>
-        [HttpPost]
-        public IActionResult Inscrever_Se(Presenca presenca)
+        
+        [Authorize]
+        [HttpPost("Inscricao/{idEvento}")]
+        public IActionResult Inscrever_Se(int idEvento)
         {
-            var elemento = banco.Get();
-            if (!elemento.Contains(
-                elemento.FirstOrDefault(a => a.IdUsuario == presenca.IdUsuario && a.IdEvento == presenca.IdEvento)))
+
+            try
             {
-                try
+                Presenca inscricao = new Presenca()
                 {
-                    banco.Post(presenca);
-                    return StatusCode(201, 
-                        $"O cadastro do usuário no evento foi concluído com sucesso");
-                }
-                catch (Exception ex)
+                    IdUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value),
+                    IdEvento = idEvento,
+                    Situacao = "Não confirmada"
+                };
+
+                var elemento = banco.Get();
+
+                if (!elemento.Contains(
+                    elemento.FirstOrDefault(a => a.IdUsuario == inscricao.IdUsuario && a.IdEvento == inscricao.IdEvento)))
                 {
-                    return BadRequest($"Ocorreu um erro na hora de cadastrar... {ex.Message.ToString()}");
+                    try
+                    {
+                        banco.Post(inscricao);
+                        return StatusCode(201);
+                    }
+                    catch (Exception ex)
+                    {
+                        return BadRequest($"Ocorreu um erro na hora de cadastrar... {ex.Message.ToString()}");
+                    }
                 }
+                else
+                {
+                    return BadRequest("Perdão, mas o usuário não pode se cadastrar mais de uma vez num mesmo evento...");
+                }
+
             }
-            else
+            catch (Exception)
             {
-                return BadRequest("Perdão, mas usuário não pode se cadastrar mais de uma vez num mesmo evento...");
+
+                throw;
             }
            
         }
+
+
+        [Authorize(Roles ="1")]
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Presenca status)
+        {
+            try
+            {
+                banco.Aprovacao(id, status.Situacao);
+                return StatusCode(204);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error.Message.ToString());
+            }
+        }
+
+
+        [Authorize]
+        [HttpPost("Convidar")]
+        public IActionResult Invite(Presenca convite)
+        {
+            try
+            {
+                banco.Convidar(convite);
+                
+                return StatusCode(201);
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
+
     }
 }
